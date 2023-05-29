@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7d8411-13f2-4241-9673-4148f20b203e" name="Changes" comment="Meetup with Correct Queries">
+      <change afterPath="$PROJECT_DIR$/book_binder/tests/MeetupRequestsControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_binder/src/Controller/MeetupRequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/src/Controller/MeetupRequestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_binder/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/src/Controller/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_binder/templates/book_binder/book_page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/templates/book_binder/book_page.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_binder/.env" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_binder/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_binder/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_binder/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/book_binder/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,6 +256,9 @@
       <path value="$PROJECT_DIR$/book_binder/vendor/firebase/php-jwt" />
       <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/clock" />
     </include_path>
   </component>
   <component name="ProjectId" id="2OjYBjDOD0o59i71DjrQj8WKUSl" />
@@ -281,7 +288,16 @@
   }
 }</component>
   <component name="RunManager" selected="PHP Built-in Web Server.Php Local">
+    <configuration name="MeetupRequestsControllerTest.testLoadOverviewPage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\MeetupRequestsControllerTest" configuration_file="$PROJECT_DIR$/book_binder/phpunit.xml.dist" file="$PROJECT_DIR$/book_binder/tests/MeetupRequestsControllerTest.php" method="testLoadOverviewPage" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <TestRunner configuration_file="$PROJECT_DIR$/book_binder/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
@@ -291,7 +307,13 @@
     <list>
       <item itemvalue="PHP Built-in Web Server.Php Local" />
       <item itemvalue="PHPUnit.UnitTests" />
+      <item itemvalue="PHPUnit.MeetupRequestsControllerTest.testLoadOverviewPage" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.MeetupRequestsControllerTest.testLoadOverviewPage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -320,6 +342,9 @@
       <workItem from="1684877967589" duration="15771000" />
       <workItem from="1685085368344" duration="881000" />
       <workItem from="1685100547684" duration="8601000" />
+      <workItem from="1685305955891" duration="619000" />
+      <workItem from="1685307866720" duration="1638000" />
+      <workItem from="1685356771973" duration="427000" />
     </task>
     <task id="LOCAL-00001" summary="Added a Book class to store books in.">
       <created>1682086348540</created>
