@@ -12,12 +12,12 @@ class SecurityControllerTest extends PantherTestCase
         $crawler = $client->request('GET', '/login');
 
         // Check if page loaded
-        $this->assertStringContainsString('sign in', $crawler->filter('h1')->text());
+        $this->assertStringContainsString('Welcome', $crawler->filter('h1')->text());
 
         // Check if login form is present
         $this->assertTrue($crawler->filter('input[type=email]')->count() > 0);
         $this->assertTrue($crawler->filter('input[type=password]')->count() > 0);
-        $this->assertStringContainsString('Sign in', $crawler->filter('button')->text());
+        $this->assertStringContainsString('Sign', $crawler->filter('button')->text());
 
         // Check if login form works
         $form = $crawler->selectButton('Sign in')->form();

@@ -119,7 +119,7 @@ class MeetupRequestsController extends AbstractController
     #[Route('/meetup/overview', name: 'meetup_overview')]
     public function showMeetupOverview(Security $security, EntityManagerInterface $entityManager, MessageBusInterface $messageBus): Response
     {
-        $ApiClient = new GoogleBooksApiClient();
+
 
         // Get the current user
         $this->security = $security;
@@ -161,6 +161,7 @@ class MeetupRequestsController extends AbstractController
 
             if ($book === null) {
                 // Book not found in cache, retrieve it from the Google Books API
+                $ApiClient = new GoogleBooksApiClient();
                 $bookData = $ApiClient->getBookById($bookId);
 
                 $newBook = new Book();
@@ -243,6 +244,7 @@ class MeetupRequestsController extends AbstractController
 
             if ($book === null) {
                 // Book not found in cache, retrieve it from the Google Books API
+                $ApiClient = new GoogleBooksApiClient();
                 $bookData = $ApiClient->getBookById($bookId);
 
                 $newBook = new Book();
@@ -333,6 +335,7 @@ class MeetupRequestsController extends AbstractController
 
             if ($book === null) {
                 // Book not found in cache, retrieve it from the Google Books API
+                $ApiClient = new GoogleBooksApiClient();
                 $bookData = $ApiClient->getBookById($bookId);
 
                 $newBook = new Book();
