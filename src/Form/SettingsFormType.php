@@ -4,14 +4,14 @@ namespace App\Form;
 
 use App\Entity\UserPersonalInfo;
 use App\Entity\UserReadingInterest;
+use App\Enum\GenreEnum;
+use App\Enum\LanguageEnum;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use App\Enum\LanguageEnum;
-use App\Enum\GenreEnum;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class SettingsFormType extends AbstractType
 {
@@ -29,7 +29,7 @@ class SettingsFormType extends AbstractType
                 'attr' => [
                     'class' => 'multiple-select-field',
                     'data-placeholder' => 'Select book languages',
-                ]
+                ],
             ])
             ->add('genres', ChoiceType::class, [
                 'label' => 'Genres',
@@ -39,7 +39,7 @@ class SettingsFormType extends AbstractType
                 'attr' => [
                     'class' => 'multiple-select-field',
                     'data-placeholder' => 'Search and select book genres',
-                ]
+                ],
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Submit',
@@ -50,7 +50,7 @@ class SettingsFormType extends AbstractType
     {
         $resolver->setDefaults([
             'userPersonalInfo_data' => UserPersonalInfo::class,
-            'readingInterest_data' => UserReadingInterest::class
+            'readingInterest_data' => UserReadingInterest::class,
         ]);
     }
 }

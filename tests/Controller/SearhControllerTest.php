@@ -16,7 +16,7 @@ class SearhControllerTest extends PantherTestCase
 {
     public function testSearch(): void
     {
-        //test book-search
+        // test book-search
         $client = static::createClient();
         $container = self::getContainer();
         $entityManager = $container->get('doctrine')->getManager();
@@ -30,7 +30,7 @@ class SearhControllerTest extends PantherTestCase
         $client->loginUser($user);
 
         // Visit the page
-        $query = "prince";
+        $query = 'prince';
 
         // Delete the book if it exists in the database
         $bookHamlet = $bookRepository->findOneBy(['title' => 'Hamlet']);
@@ -62,7 +62,7 @@ class SearhControllerTest extends PantherTestCase
         $client->loginUser($user);
 
         // Visit the page
-        $id = "l5quhLiZEiwC";
+        $id = 'l5quhLiZEiwC';
 
         // Delete the book if it exists in the database
         $book = $bookRepository->findOneBy(['google_books_id' => $id]);
@@ -79,7 +79,7 @@ class SearhControllerTest extends PantherTestCase
 
     public function testMultipleSearch(): void
     {
-        //test if book-search returns multiple results
+        // test if book-search returns multiple results
         $client = static::createClient();
         $container = self::getContainer();
         $entityManager = $container->get('doctrine')->getManager();
@@ -91,7 +91,7 @@ class SearhControllerTest extends PantherTestCase
         $client->loginUser($user);
 
         // Visit the page
-        $query = "prince";
+        $query = 'prince';
         $crawler = $client->request('GET', "/book-search/{$query}");
 
         // Check if the page is loaded successfully
@@ -115,7 +115,7 @@ class SearhControllerTest extends PantherTestCase
         $client->loginUser($user);
 
         // Visit the page
-        $id = "l5quhLiZEiwC";
+        $id = 'l5quhLiZEiwC';
         $crawler = $client->request('GET', "/book-page/{$id}");
 
         // Find the button that opens the modal
@@ -265,7 +265,7 @@ class SearhControllerTest extends PantherTestCase
         // Send an AJAX request to add the book to the reading list
         $client->request('POST', '/handle-dropdown-selection', [
             'selection' => $selection,
-            'book_id' =>  $bookId,
+            'book_id' => $bookId,
         ]);
 
         // Verify the response

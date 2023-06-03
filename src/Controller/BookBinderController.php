@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use App\Entity\BookReviews;
+use App\Api\GoogleBooksApiClient;
 use App\Entity\Book;
+use App\Entity\BookReviews;
 use App\Message\AddBookToDatabase;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Api\GoogleBooksApiClient;
 
 class BookBinderController extends AbstractController
 {
-    #[Route("/", name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function home(EntityManagerInterface $entityManager, MessageBusInterface $messageBus): Response
     {
         $user = $this->getUser();
@@ -33,7 +33,7 @@ class BookBinderController extends AbstractController
         $ApiClient = new GoogleBooksApiClient();
 
         // if the user has no genres, add some default ones.
-        if (count($genres) === 0) {
+        if (0 === count($genres)) {
             array_push($genres, 'Fantasy', 'popular', 'classic');
         }
 
@@ -59,7 +59,7 @@ class BookBinderController extends AbstractController
                 foreach ($books as $bookData) {
                     $existingBook = $entityManager->getRepository(Book::class)->findOneBy(['google_books_id' => $bookData['id']]);
 
-                    if ($existingBook === null) {
+                    if (null === $existingBook) {
                         // Complete the book object with the data from the API
                         $newBook = new Book();
                         $newBook->setGoogleBooksId($bookData['id']);
@@ -67,20 +67,20 @@ class BookBinderController extends AbstractController
                         if (isset($bookData['volumeInfo']['title'])) {
                             $newBook->setTitle($bookData['volumeInfo']['title']);
                         } else {
-                            $newBook->setTitle("");
+                            $newBook->setTitle('');
                         }
 
                         if (isset($bookData['volumeInfo']['description'])) {
                             Continuation:
                             $newBook->setDescription($bookData['volumeInfo']['description']);
                         } else {
-                            $newBook->setDescription("");
+                            $newBook->setDescription('');
                         }
 
                         if (isset($bookData['volumeInfo']['imageLinks']['thumbnail'])) {
                             $newBook->setThumbnail($bookData['volumeInfo']['imageLinks']['thumbnail']);
                         } else {
-                            $newBook->setThumbnail("");
+                            $newBook->setThumbnail('');
                         }
 
                         if (isset($bookData['volumeInfo']['averageRating'])) {
@@ -98,7 +98,7 @@ class BookBinderController extends AbstractController
                         if (isset($bookData['volumeInfo']['authors'][0])) {
                             $newBook->setAuthor($bookData['volumeInfo']['authors'][0]);
                         } else {
-                            $newBook->setAuthor("");
+                            $newBook->setAuthor('');
                         }
 
                         if (isset($bookData['volumeInfo']['pageCount'])) {
@@ -119,7 +119,7 @@ class BookBinderController extends AbstractController
                         $messageBus->dispatch(new AddBookToDatabase($newBook));
 
                         // Check if any non-nullable fields are missing
-                        if ($newBook->getTitle() !== null && $newBook->getAuthor() !== null) {
+                        if (null !== $newBook->getTitle() && null !== $newBook->getAuthor()) {
                             // Add the Book object to the array
                             $bookObjects[] = $newBook;
                         }
@@ -127,7 +127,7 @@ class BookBinderController extends AbstractController
                 }
 
                 // Assign the Book objects to the $results array
-                if ($results[$genre] === null) {
+                if (null === $results[$genre]) {
                     $results[$genre] = $bookObjects;
                 } else {
                     $results[$genre] = array_merge($results[$genre], $bookObjects);
@@ -143,7 +143,7 @@ class BookBinderController extends AbstractController
         return $this->render('book_binder/index.html.twig', [
             'controller_name' => 'BookBinderController',
             'results' => $results,
-            'reviews' => $reviews
+            'reviews' => $reviews,
         ]);
     }
 }

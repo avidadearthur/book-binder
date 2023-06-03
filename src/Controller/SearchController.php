@@ -2,24 +2,22 @@
 
 namespace App\Controller;
 
+use App\Api\GoogleBooksApiClient;
+use App\Entity\Book;
 use App\Entity\BookReviews;
 use App\Entity\MeetupList;
+use App\Entity\MeetupRequestList;
 use App\Entity\MeetupRequests;
-use App\Entity\Book;
 use App\Entity\UserPersonalInfo;
+use App\Form\MeetupRequestFormType;
 use App\Message\AddBookToDatabase;
-use OpenAI;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Api\GoogleBooksApiClient;
-use App\Entity\MeetupRequestList;
-use App\Form\MeetupRequestFormType;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
-use OpenAI\Client as OpenAIClient;
 
 /*
  * This controller meant for the development of the
@@ -40,7 +38,7 @@ class SearchController extends AbstractController
         return $this->render('book_binder/book_search.html.twig', [
             'controller_name' => 'BookBinderController',
             'results' => $results,
-            'query' => $query
+            'query' => $query,
         ]);
     }
 
@@ -72,7 +70,7 @@ class SearchController extends AbstractController
 
         $messages = [
             ['role' => 'system', 'content' => 'You are a book assistant, recommend a single book to the user based on their input.'],
-            ['role' => 'user', 'content' => "Only respond with the title of the book, no author, no punctuation, recommend me a book about: " . $prompt],
+            ['role' => 'user', 'content' => 'Only respond with the title of the book, no author, no punctuation, recommend me a book about: '.$prompt],
         ];
 
         $requestBody = [
@@ -80,7 +78,7 @@ class SearchController extends AbstractController
             'messages' => $messages,
         ];
 
-        $client = OpenAI::client($apiKey);
+        $client = \OpenAI::client($apiKey);
         $responseData = $client->chat()->create($requestBody);
 
         $generatedText = $responseData['choices'][0]['message']['content'];
@@ -100,7 +98,7 @@ class SearchController extends AbstractController
         // ============= API stuff =============
         // Check if book in cache
         $book = $entityManager->getRepository(Book::class)->findOneBy(['google_books_id' => $id]);
-        if ($book === null) { // If no book in cache, add it
+        if (null === $book) { // If no book in cache, add it
             $ApiClient = new GoogleBooksApiClient();
             $bookData = $ApiClient->getBookById($id);
 
@@ -110,20 +108,20 @@ class SearchController extends AbstractController
             if (isset($bookData['volumeInfo']['title'])) {
                 $newBook->setTitle($bookData['volumeInfo']['title']);
             } else {
-                $newBook->setTitle("");
+                $newBook->setTitle('');
             }
 
             if (isset($bookData['volumeInfo']['description'])) {
                 Continuation:
                 $newBook->setDescription($bookData['volumeInfo']['description']);
             } else {
-                $newBook->setDescription("");
+                $newBook->setDescription('');
             }
 
             if (isset($bookData['volumeInfo']['imageLinks']['thumbnail'])) {
                 $newBook->setThumbnail($bookData['volumeInfo']['imageLinks']['thumbnail']);
             } else {
-                $newBook->setThumbnail("");
+                $newBook->setThumbnail('');
             }
 
             if (isset($bookData['volumeInfo']['averageRating'])) {
@@ -141,7 +139,7 @@ class SearchController extends AbstractController
             if (isset($bookData['volumeInfo']['authors'][0])) {
                 $newBook->setAuthor($bookData['volumeInfo']['authors'][0]);
             } else {
-                $newBook->setAuthor("");
+                $newBook->setAuthor('');
             }
 
             if (isset($bookData['volumeInfo']['pageCount'])) {
@@ -159,7 +157,7 @@ class SearchController extends AbstractController
             if (isset($bookData['volumeInfo']['categories'])) {
                 $newBook->setCategory($bookData['volumeInfo']['categories'][0]);
             } else {
-                $newBook->setCategory("");
+                $newBook->setCategory('');
             }
 
             // Dispatch a new AddBookToDatabase message
@@ -172,7 +170,7 @@ class SearchController extends AbstractController
         $user = $this->getUser();
         $userId = $user->getId();
 
-        //$meetupRequests = $entityManager->getRepository(MeetupRequests::class)->findBy(['book_ID' => $id], ['datetime' => 'DESC'], 10);
+        // $meetupRequests = $entityManager->getRepository(MeetupRequests::class)->findBy(['book_ID' => $id], ['datetime' => 'DESC'], 10);
         $meetupRequests = $entityManager->createQueryBuilder()
             ->select('mr')
             ->from('App\Entity\MeetupRequests', 'mr')
@@ -233,7 +231,7 @@ class SearchController extends AbstractController
         ]);
 
         // if $existingReview is not null then the user has already reviewed the book
-        $hasReviewed = $existingReview !== null;
+        $hasReviewed = null !== $existingReview;
 
         $reviews = array_slice($entityManager->getRepository(BookReviews::class)->findBy(['book_id' => $id], ['created_at' => 'DESC']), 0, 7);
         $reviewData = [];
@@ -242,7 +240,7 @@ class SearchController extends AbstractController
             // Put review and username in a 2D array reviewData
             $reviewData[] = [
                 'review' => $review,
-                'username' => $UserPersonalInfo->getNickname()
+                'username' => $UserPersonalInfo->getNickname(),
             ];
         }
 
@@ -259,11 +257,10 @@ class SearchController extends AbstractController
         ]);
     }
 
-    //"/book/{bookId}/add-review/{userId}", name="add_review", methods={"POST"})
+    // "/book/{bookId}/add-review/{userId}", name="add_review", methods={"POST"})
     #[Route('/add-review/{bookId}', name: 'add_review')]
     public function addReview(Request $request, $bookId, EntityManagerInterface $entityManager): \Symfony\Component\HttpFoundation\RedirectResponse
     {
-
         $comment = $request->request->get('comment');
         $rating = $request->request->get('rating');
 
@@ -278,7 +275,7 @@ class SearchController extends AbstractController
         $review->setCreatedAt(new \DateTime());
         $review->setBookTitle($book->getTitle());
         $review->setRating($rating);
-        $review->setTags("Hi"); // TODO: remove this later ?
+        $review->setTags('Hi'); // TODO: remove this later ?
 
         $entityManager->persist($review);
         $entityManager->flush();
@@ -308,7 +305,7 @@ class SearchController extends AbstractController
     }
 
     #[Route('/book-page/requests/list/join/{bookId}/{meetupRequestId}', name: 'meetup_requests_list_join_book')]
-    public function joinMeetupRequest(String $bookId, int $meetupRequestId, EntityManagerInterface $entityManager): Response
+    public function joinMeetupRequest(string $bookId, int $meetupRequestId, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
 
@@ -351,12 +348,12 @@ class SearchController extends AbstractController
     /**
      * @Route("/book-suggestion/{input}", name="book_suggestion", requirements={"input"=".*"})
      */
-    #[Route("/book-suggestion/{input}", name: 'book_suggestion')]
+    #[Route('/book-suggestion/{input}', name: 'book_suggestion')]
     public function bookSuggestion($input, EntityManagerInterface $entityManager): JsonResponse
     {
         $books = $entityManager->getRepository(Book::class)->createQueryBuilder('b')
             ->where('b.title LIKE :title')
-            ->setParameter('title', '%' . $input . '%')
+            ->setParameter('title', '%'.$input.'%')
             ->setMaxResults(4)
             ->getQuery()
             ->getResult();
@@ -395,10 +392,10 @@ class SearchController extends AbstractController
             case 'To Read':
                 if ($is_in_want_to_read) {
                     // do nothing
-                } else if ($is_in_currently_reading) {
+                } elseif ($is_in_currently_reading) {
                     // remove from currently reading
                     $currentlyReading = array_diff($currentlyReading, [$bookId]);
-                } else if ($is_in_have_read) {
+                } elseif ($is_in_have_read) {
                     // remove from have read
                     $haveRead = array_diff($haveRead, [$bookId]);
                 }
@@ -408,9 +405,9 @@ class SearchController extends AbstractController
                 if ($is_in_want_to_read) {
                     // remove from want to read
                     $wantToRead = array_diff($wantToRead, [$bookId]);
-                } else if ($is_in_currently_reading) {
+                } elseif ($is_in_currently_reading) {
                     // do nothing
-                } else if ($is_in_have_read) {
+                } elseif ($is_in_have_read) {
                     // remove from have read
                     $haveRead = array_diff($haveRead, [$bookId]);
                 }
@@ -420,10 +417,10 @@ class SearchController extends AbstractController
                 if ($is_in_want_to_read) {
                     // remove from want to read
                     $wantToRead = array_diff($wantToRead, [$bookId]);
-                } else if ($is_in_currently_reading) {
+                } elseif ($is_in_currently_reading) {
                     // remove from currently reading
                     $currentlyReading = array_diff($currentlyReading, [$bookId]);
-                } else if ($is_in_have_read) {
+                } elseif ($is_in_have_read) {
                     // do nothing
                 }
                 $haveRead[] = $bookId;

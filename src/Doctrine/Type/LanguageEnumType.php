@@ -4,9 +4,9 @@
 
 namespace App\Doctrine\Type;
 
-use Doctrine\DBAL\Types\Type;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
 use App\Enum\LanguageEnum;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\Type;
 
 class LanguageEnumType extends Type
 {
@@ -14,7 +14,7 @@ class LanguageEnumType extends Type
 
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
     {
-        return "ENUM('" . implode("','", LanguageEnum::getChoices()) . "')";
+        return "ENUM('".implode("','", LanguageEnum::getChoices())."')";
     }
 
     public function convertToPHPValue($value, AbstractPlatform $platform): ?string

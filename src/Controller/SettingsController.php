@@ -46,6 +46,7 @@ class SettingsController extends AbstractController
                 // if there is a user with the same nickname and it is not the current user
                 if ($userWithSameNickname && $userWithSameNicknameId != $user->getId()) {
                     $this->addFlash('error', 'Nickname already in use');
+
                     return $this->redirectToRoute('settings');
                 } else {
                     $userPersonalInfo->setNickname($settingsForm->get('nickname')->getData());

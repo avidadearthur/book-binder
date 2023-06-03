@@ -4,9 +4,9 @@
 
 namespace App\Doctrine\Type;
 
-use Doctrine\DBAL\Types\Type;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
 use App\Enum\GenreEnum;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\Type;
 
 class GenreEnumType extends Type
 {
@@ -14,7 +14,7 @@ class GenreEnumType extends Type
 
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
     {
-        return "ENUM('" . implode("','", GenreEnum::getChoices()) . "')";
+        return "ENUM('".implode("','", GenreEnum::getChoices())."')";
     }
 
     public function convertToPHPValue($value, AbstractPlatform $platform): ?string

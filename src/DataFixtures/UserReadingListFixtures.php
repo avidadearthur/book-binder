@@ -16,13 +16,13 @@ class UserReadingListFixtures extends Fixture implements DependentFixtureInterfa
         $faker = Factory::create();
 
         // Get all the user references
-        for ($i = 1; $i <= 10; $i++) {
-            $users[] = $this->getReference(UserFixtures::USER_REFERENCE . $i);
+        for ($i = 1; $i <= 10; ++$i) {
+            $users[] = $this->getReference(UserFixtures::USER_REFERENCE.$i);
         }
 
         // Get all the book references
-        for ($i = 1; $i <= 10; $i++) {
-            $books[] = $this->getReference(BookFixtures::BOOK_REFERENCE . $i)->getId();
+        for ($i = 1; $i <= 10; ++$i) {
+            $books[] = $this->getReference(BookFixtures::BOOK_REFERENCE.$i)->getId();
         }
 
         foreach ($users as $user) {
@@ -36,14 +36,14 @@ class UserReadingListFixtures extends Fixture implements DependentFixtureInterfa
             $currentReadingArray = [];
             $wantToReadArray = [];
             $readArray = [];
-            for ($i = 1; $i <= $currentReadingNumber; $i++) {
-                $currentReadingArray[$i] = $fakerBooks->get($i-1);
+            for ($i = 1; $i <= $currentReadingNumber; ++$i) {
+                $currentReadingArray[$i] = $fakerBooks->get($i - 1);
             }
-            for ($i = 1; $i <= $wantToReadNumber; $i++) {
-                $wantToReadArray[$i-1] = $fakerBooks->get($i + $currentReadingNumber - 1);
+            for ($i = 1; $i <= $wantToReadNumber; ++$i) {
+                $wantToReadArray[$i - 1] = $fakerBooks->get($i + $currentReadingNumber - 1);
             }
-            for ($i = 1; $i <= $readNumber; $i++) {
-                $readArray[$i-1] = $fakerBooks->get($i + $currentReadingNumber + $wantToReadNumber - 1);
+            for ($i = 1; $i <= $readNumber; ++$i) {
+                $readArray[$i - 1] = $fakerBooks->get($i + $currentReadingNumber + $wantToReadNumber - 1);
             }
             $currentReadingArray = array_values($currentReadingArray);
             $wantToReadArray = array_values($wantToReadArray);

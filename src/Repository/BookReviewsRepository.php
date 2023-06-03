@@ -40,8 +40,8 @@ class BookReviewsRepository extends ServiceEntityRepository
     }
 
     /**
-    //     * @return BookReviews[] Returns an array of BookReviews objects
-    //     */
+     * //     * @return BookReviews[] Returns an array of BookReviews objects
+     * //     */
     public function findLatest(int $number): array
     {
         return $this->findBy([], ['created_at' => 'DESC'], $number);

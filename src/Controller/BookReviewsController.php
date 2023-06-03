@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\BookReviews;
 use App\Entity\User;
 use App\Form\BookReviewFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\BookReviews;
-use Symfony\Component\HttpFoundation\Request;
 
 class BookReviewsController extends AbstractController
 {
@@ -60,7 +60,7 @@ class BookReviewsController extends AbstractController
         // Search for reviews that contain the query string in the review text or tags
         $bookReviews = $entityManager->getRepository(BookReviews::class)->createQueryBuilder('r')
             ->where('r.review LIKE :query OR r.tags LIKE :query')
-            ->setParameter('query', '%' . $query . '%')
+            ->setParameter('query', '%'.$query.'%')
             ->getQuery()
             ->getResult();
 
@@ -77,7 +77,7 @@ class BookReviewsController extends AbstractController
 
         return $this->render('book_reviews/book_review_search.html.twig', [
             'reviewsData' => $reviewsData,
-            'query' => $query
+            'query' => $query,
         ]);
     }
 }

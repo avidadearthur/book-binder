@@ -3,11 +3,11 @@
 namespace App\DataFixtures;
 
 use App\Entity\Book;
+use App\Enum\GenreEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use App\Enum\GenreEnum;
 
 class BookFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -33,7 +33,7 @@ class BookFixtures extends Fixture implements DependentFixtureInterface
         // Get all genre choices
         $genreChoices = GenreEnum::getChoices();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 10; ++$i) {
             $book = new Book();
             $book->setGoogleBooksId($this->bookIds[$i - 1]);
             $book->setTitle($faker->sentence(5));
@@ -49,7 +49,7 @@ class BookFixtures extends Fixture implements DependentFixtureInterface
             $manager->persist($book);
 
             // Create a unique reference for each book
-            $this->addReference(self::BOOK_REFERENCE . $i, $book);
+            $this->addReference(self::BOOK_REFERENCE.$i, $book);
         }
 
         $manager->flush();

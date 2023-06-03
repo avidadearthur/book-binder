@@ -67,11 +67,11 @@ class LibraryFixtures extends Fixture implements DependentFixtureInterface
         ];
 
         for ($i = 1; $i <= count($libraries); ++$i) {
-            $library = $this->createLibrary($libraries[$i-1]);
+            $library = $this->createLibrary($libraries[$i - 1]);
             $manager->persist($library);
 
             // Create unique reference for each library
-            $this->addReference(self::LIBRARY_REFERENCE . $i, $library);
+            $this->addReference(self::LIBRARY_REFERENCE.$i, $library);
         }
 
         $manager->flush();
@@ -99,4 +99,3 @@ class LibraryFixtures extends Fixture implements DependentFixtureInterface
         ];
     }
 }
-

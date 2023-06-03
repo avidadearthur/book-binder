@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\User;
 use App\Entity\UserPersonalInfo;
 use App\Entity\UserReadingInterest;
 use App\Enum\GenreEnum;
@@ -9,7 +10,6 @@ use App\Enum\LanguageEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use App\Entity\User;
 use Faker\Factory;
 
 class UserFixtures extends Fixture implements DependentFixtureInterface
@@ -24,14 +24,14 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $genreChoices = GenreEnum::getChoices();
         $languageChoices = LanguageEnum::getChoices();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 10; ++$i) {
             $user = new User();
             $user->setEmail("user{$i}@example.com");
             $user->setPassword(''); // Password is not used in this application
             $manager->persist($user);
 
             // Create unique reference for each user
-            $this->addReference(self::USER_REFERENCE . $i, $user);
+            $this->addReference(self::USER_REFERENCE.$i, $user);
 
             // Create UserReadingInterest object for each user
             $readingInterest = new UserReadingInterest();

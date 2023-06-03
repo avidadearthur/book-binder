@@ -67,6 +67,7 @@ class BookReviewFormType extends AbstractType
     private function extractTags(string $review): array
     {
         preg_match_all('/##(\w+)/', $review, $matches);
+
         return $matches[1];
     }
 }

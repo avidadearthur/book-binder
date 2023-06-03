@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\UserReadingInterestRepository;
-use Doctrine\ORM\Mapping as ORM;
-use Doctrine\DBAL\Types\Types;
-use App\Enum\LanguageEnum;
 use App\Enum\GenreEnum;
+use App\Enum\LanguageEnum;
+use App\Repository\UserReadingInterestRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UserReadingInterestRepository::class)]
 class UserReadingInterest

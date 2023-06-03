@@ -3,10 +3,9 @@
 namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\DBAL\Connection;
-use Throwable;
 
 class ResetAutoincrementFixture extends Fixture
 {
@@ -19,7 +18,7 @@ class ResetAutoincrementFixture extends Fixture
 
     /**
      * @throws Exception
-     * @throws Throwable
+     * @throws \Throwable
      */
     public function load(ObjectManager $manager): void
     {

@@ -60,12 +60,12 @@ class MeetupRequests
         return $this;
     }
 
-    public function getBookID(): ?String
+    public function getBookID(): ?string
     {
         return $this->book_ID;
     }
 
-    public function setBookID(String $book_ID): self
+    public function setBookID(string $book_ID): self
     {
         $this->book_ID = $book_ID;
 

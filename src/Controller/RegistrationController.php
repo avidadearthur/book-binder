@@ -6,8 +6,8 @@ use App\Entity\User;
 use App\Entity\UserPersonalInfo;
 use App\Entity\UserReadingInterest;
 use App\Entity\UserReadingList;
-use App\Form\RegistrationFormType;
 use App\Form\ReadingInterestFormType;
+use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,11 +18,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
-use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-
+use Symfony\Contracts\Translation\TranslatorInterface;
+use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
 class RegistrationController extends AbstractController
 {
@@ -62,6 +61,7 @@ class RegistrationController extends AbstractController
             $email = $entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
             if ($email) {
                 $this->addFlash('error', 'Email already registered');
+
                 return $this->redirectToRoute('app_register');
             } else {
                 $user->setEmail($form->get('email')->getData());
@@ -69,7 +69,7 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
 
-            //handle user personal info if any
+            // handle user personal info if any
             $userPersonalInfo->setUser($user);
             // try to add name, if not set, set it to null
             if (!empty($form->get('name')->getData())) {
@@ -84,6 +84,7 @@ class RegistrationController extends AbstractController
             $nickname = $entityManager->getRepository(UserPersonalInfo::class)->findOneBy(['nickname' => $nickname]);
             if ($nickname) {
                 $this->addFlash('error', 'Nickname already in use');
+
                 return $this->redirectToRoute('app_register');
             } else {
                 $userPersonalInfo->setNickname($form->get('nickname')->getData());
@@ -91,7 +92,7 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($userPersonalInfo);
 
-            //handle user reading list
+            // handle user reading list
             $userReadingList->setUser($user);
 
             $userReadingList->setCurrentlyReading([]);
@@ -131,7 +132,7 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/reading-interest', name: 'reading_interest')]
-    public function collectReadingInterestForm(Request $request, EntityManagerInterface $entityManager,): Response
+    public function collectReadingInterestForm(Request $request, EntityManagerInterface $entityManager): Response
     {
         // check if the user has already filled the reading interest form
         $user = $this->getUser();

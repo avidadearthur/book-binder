@@ -3,18 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
-
 
 class ReadingListController extends AbstractController
 {
     #[Route('/reading-list', name: 'reading_list')]
     public function showReadingList(EntityManagerInterface $entityManager): Response
     {
-
         // fetch the user's reading list
         // In turns out that adding this comment fixed the VS Code intelephense error, not sure if that's the case for
         // Intelj as well

@@ -2,15 +2,15 @@
 
 namespace App\Form;
 
-use App\Entity\MeetupRequests;
 use App\Entity\Library;
+use App\Entity\MeetupRequests;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Range;
@@ -55,7 +55,7 @@ class MeetupRequestFormType extends AbstractType
                 'label' => 'Maximum Number',
                 'constraints' => [
                     new NotBlank(),
-                    new Range(['min' => 1, 'max' => 20])
+                    new Range(['min' => 1, 'max' => 20]),
                 ],
             ]);
     }

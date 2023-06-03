@@ -4,9 +4,9 @@ namespace App\Tests\EnumType;
 
 use App\Doctrine\Type\GenreEnumType;
 use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\Type;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
 use PHPUnit\Framework\TestCase;
 
 class GenreEnumTypeTest extends TestCase
@@ -22,7 +22,7 @@ class GenreEnumTypeTest extends TestCase
         $expectedSQL = "ENUM('Adult','Anthologies','Art')";
         $actualSQL = $type->getSQLDeclaration([], $platform);
         // Extract the first 3 items from the array
-        $actualSQL = substr($actualSQL, 0, 32) . ')';
+        $actualSQL = substr($actualSQL, 0, 32).')';
 
         $this->assertSame($expectedSQL, $actualSQL);
     }

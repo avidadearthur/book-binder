@@ -3,12 +3,12 @@
 namespace App\Form;
 
 use App\Entity\UserReadingInterest;
-use App\Enum\LanguageEnum;
 use App\Enum\GenreEnum;
+use App\Enum\LanguageEnum;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ReadingInterestFormType extends AbstractType
@@ -24,7 +24,7 @@ class ReadingInterestFormType extends AbstractType
                 'attr' => [
                     'class' => 'multiple-select-field',
                     'data-placeholder' => 'Select book languages',
-                ]
+                ],
             ])
             ->add('genres', ChoiceType::class, [
                 'label' => 'Genres',
@@ -34,7 +34,7 @@ class ReadingInterestFormType extends AbstractType
                 'attr' => [
                     'class' => 'multiple-select-field',
                     'data-placeholder' => 'Search and select book genres',
-                ]
+                ],
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Submit',

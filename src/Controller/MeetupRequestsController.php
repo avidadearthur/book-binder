@@ -9,8 +9,8 @@ use App\Entity\MeetupRequests;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -59,7 +59,7 @@ class MeetupRequestsController extends AbstractController
 
         $meetupRequest = $entityManager->getRepository(MeetupRequestList::class)->find($meetupRequestId);
 
-        if ($action === 'accept') {
+        if ('accept' === $action) {
             // Retrieve the meetup request details
             $meetup = $meetupRequest->getMeetupID();
             $user = $meetupRequest->getUserID();
@@ -135,7 +135,6 @@ class MeetupRequestsController extends AbstractController
             $booksMeetupRequests[$bookId] = $book;
         }
 
-
         // The first column
         // Get the joined meetup requests for the user
         $joinedRequests = $entityManager->getRepository(MeetupList::class)->findBy(['user_ID' => $userId]);
@@ -163,8 +162,8 @@ class MeetupRequestsController extends AbstractController
             'booksUpcomingRequests' => $booksUpcomingRequests,
             'meetupRequests' => $meetupRequests,
             'booksMeetupRequests' => $booksMeetupRequests,
-            'meetupAvailabes'=>$meetupAvailables,
-            'booksMeetupAvailables' => $booksMeetupAvailables
+            'meetupAvailabes' => $meetupAvailables,
+            'booksMeetupAvailables' => $booksMeetupAvailables,
         ]);
     }
 }

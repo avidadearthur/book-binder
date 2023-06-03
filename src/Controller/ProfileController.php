@@ -2,16 +2,17 @@
 
 namespace App\Controller;
 
-use App\Entity\BookReviews;
 use App\Entity\Book;
+use App\Entity\BookReviews;
 use App\Entity\UserPersonalInfo;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
 
-class ProfileController extends AbstractController  {
-    #[Route("/profile", name: 'profile')]
+class ProfileController extends AbstractController
+{
+    #[Route('/profile', name: 'profile')]
     public function myProfile(EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
@@ -25,7 +26,7 @@ class ProfileController extends AbstractController  {
         return $this->render('profile/profile.html.twig', [
             'controller_name' => 'ProfileController',
             'user' => $this->getUser(),
-            'reviews' => $reviews
+            'reviews' => $reviews,
         ]);
     }
 
@@ -38,7 +39,7 @@ class ProfileController extends AbstractController  {
 
         try {
             $user = $entityManager->getRepository(UserPersonalInfo::class)->findOneBy(['nickname' => $username])->getUser();
-        } catch(\Throwable $th) {
+        } catch (\Throwable $th) {
             return $this->redirectToRoute('app_home');
         }
 
@@ -79,7 +80,7 @@ class ProfileController extends AbstractController  {
             'reviews' => $reviews,
             'currently_reading' => $currently_reading_books,
             'want_to_read' => $want_to_read_books,
-            'have_read' => $have_read_books
+            'have_read' => $have_read_books,
         ]);
     }
 }
