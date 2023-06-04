@@ -1,5 +1,19 @@
 <?php
 
+/*
+ *             ████████   ████████                           █████      ████████  ████
+ *            ███░░░░███ ███░░░░███                         ░░███      ███░░░░███░░███
+ *   ██████  ░░░    ░███░░░    ░███ █████ ███ █████  ██████  ░███████ ░░░    ░███ ░███
+ *  ░░░░░███    ███████    ███████ ░░███ ░███░░███  ███░░███ ░███░░███   ██████░  ░███
+ *   ███████   ███░░░░    ███░░░░   ░███ ░███ ░███ ░███████  ░███ ░███  ░░░░░░███ ░███
+ *  ███░░███  ███      █ ███      █ ░░███████████  ░███░░░   ░███ ░███ ███   ░███ ░███
+ * ░░████████░██████████░██████████  ░░████░████   ░░██████  ████████ ░░████████  █████
+ *  ░░░░░░░░ ░░░░░░░░░░ ░░░░░░░░░░    ░░░░ ░░░░     ░░░░░░  ░░░░░░░░   ░░░░░░░░  ░░░░░
+ *
+ *  This file is part of the a22web31 - web technology project.
+ *
+ */
+
 namespace App\Controller;
 
 use App\Entity\User;
@@ -47,7 +61,7 @@ class SecurityController extends AbstractController
         $parts = explode('.', $credential);
 
         // Decode the payload using Base64url decoding
-        $payload = json_decode(base64_decode($parts[1]), true);
+        $payload = json_decode(base64_decode($parts[1], true), true);
 
         // Get the email from the payload
         $email = $payload['email'];

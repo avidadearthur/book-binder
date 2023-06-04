@@ -1,5 +1,19 @@
 <?php
 
+/*
+ *             ████████   ████████                           █████      ████████  ████
+ *            ███░░░░███ ███░░░░███                         ░░███      ███░░░░███░░███
+ *   ██████  ░░░    ░███░░░    ░███ █████ ███ █████  ██████  ░███████ ░░░    ░███ ░███
+ *  ░░░░░███    ███████    ███████ ░░███ ░███░░███  ███░░███ ░███░░███   ██████░  ░███
+ *   ███████   ███░░░░    ███░░░░   ░███ ░███ ░███ ░███████  ░███ ░███  ░░░░░░███ ░███
+ *  ███░░███  ███      █ ███      █ ░░███████████  ░███░░░   ░███ ░███ ███   ░███ ░███
+ * ░░████████░██████████░██████████  ░░████░████   ░░██████  ████████ ░░████████  █████
+ *  ░░░░░░░░ ░░░░░░░░░░ ░░░░░░░░░░    ░░░░ ░░░░     ░░░░░░  ░░░░░░░░   ░░░░░░░░  ░░░░░
+ *
+ *  This file is part of the a22web31 - web technology project.
+ *
+ */
+
 namespace App\Controller;
 
 use App\Api\GoogleBooksApiClient;
@@ -19,7 +33,7 @@ class BookBinderController extends AbstractController
     {
         $user = $this->getUser();
 
-        if (is_null($user)) {
+        if (null === $user) {
             return $this->redirectToRoute('app_login');
         } else {
             try {
@@ -33,7 +47,7 @@ class BookBinderController extends AbstractController
         $ApiClient = new GoogleBooksApiClient();
 
         // if the user has no genres, add some default ones.
-        if (0 === count($genres)) {
+        if (0 === \count($genres)) {
             array_push($genres, 'Fantasy', 'popular', 'classic');
         }
 
@@ -46,7 +60,7 @@ class BookBinderController extends AbstractController
         foreach ($genres as $genre) {
             $books = $entityManager->getRepository(Book::class)->findBy(['category' => $genre], ['id' => 'DESC'], limit: 40);
             $results[$genre] = $books;
-            $cachedCount = count($books);
+            $cachedCount = \count($books);
 
             if ($cachedCount < 40) {
                 $books = $ApiClient->getBooksBySubject($genre, 40 - $cachedCount);

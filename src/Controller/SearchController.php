@@ -1,5 +1,19 @@
 <?php
 
+/*
+ *             ████████   ████████                           █████      ████████  ████
+ *            ███░░░░███ ███░░░░███                         ░░███      ███░░░░███░░███
+ *   ██████  ░░░    ░███░░░    ░███ █████ ███ █████  ██████  ░███████ ░░░    ░███ ░███
+ *  ░░░░░███    ███████    ███████ ░░███ ░███░░███  ███░░███ ░███░░███   ██████░  ░███
+ *   ███████   ███░░░░    ███░░░░   ░███ ░███ ░███ ░███████  ░███ ░███  ░░░░░░███ ░███
+ *  ███░░███  ███      █ ███      █ ░░███████████  ░███░░░   ░███ ░███ ███   ░███ ░███
+ * ░░████████░██████████░██████████  ░░████░████   ░░██████  ████████ ░░████████  █████
+ *  ░░░░░░░░ ░░░░░░░░░░ ░░░░░░░░░░    ░░░░ ░░░░     ░░░░░░  ░░░░░░░░   ░░░░░░░░  ░░░░░
+ *
+ *  This file is part of the a22web31 - web technology project.
+ *
+ */
+
 namespace App\Controller;
 
 use App\Api\GoogleBooksApiClient;
@@ -11,9 +25,11 @@ use App\Entity\MeetupRequests;
 use App\Entity\UserPersonalInfo;
 use App\Form\MeetupRequestFormType;
 use App\Message\AddBookToDatabase;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -202,9 +218,9 @@ class SearchController extends AbstractController
 
         $bookId = $book->getId();
 
-        $is_in_want_to_read = in_array($bookId, $wantToRead);
-        $is_in_currently_reading = in_array($bookId, $currentlyReading);
-        $is_in_have_read = in_array($bookId, $haveRead);
+        $is_in_want_to_read = \in_array($bookId, $wantToRead, true);
+        $is_in_currently_reading = \in_array($bookId, $currentlyReading, true);
+        $is_in_have_read = \in_array($bookId, $haveRead, true);
 
         // Host meetup request form
         $meetupRequest = new MeetupRequests();
@@ -233,7 +249,7 @@ class SearchController extends AbstractController
         // if $existingReview is not null then the user has already reviewed the book
         $hasReviewed = null !== $existingReview;
 
-        $reviews = array_slice($entityManager->getRepository(BookReviews::class)->findBy(['book_id' => $id], ['created_at' => 'DESC']), 0, 7);
+        $reviews = \array_slice($entityManager->getRepository(BookReviews::class)->findBy(['book_id' => $id], ['created_at' => 'DESC']), 0, 7);
         $reviewData = [];
         foreach ($reviews as $review) {
             $UserPersonalInfo = $entityManager->getRepository(UserPersonalInfo::class)->findOneBy(['user' => $review->getUserId()]);
@@ -259,7 +275,7 @@ class SearchController extends AbstractController
 
     // "/book/{bookId}/add-review/{userId}", name="add_review", methods={"POST"})
     #[Route('/add-review/{bookId}', name: 'add_review')]
-    public function addReview(Request $request, $bookId, EntityManagerInterface $entityManager): \Symfony\Component\HttpFoundation\RedirectResponse
+    public function addReview(Request $request, $bookId, EntityManagerInterface $entityManager): RedirectResponse
     {
         $comment = $request->request->get('comment');
         $rating = $request->request->get('rating');
@@ -284,7 +300,7 @@ class SearchController extends AbstractController
     }
 
     #[Route('/update-review/{bookId}', name: 'update_review')]
-    public function updateReview(Request $request, $bookId, EntityManagerInterface $entityManager): \Symfony\Component\HttpFoundation\RedirectResponse
+    public function updateReview(Request $request, $bookId, EntityManagerInterface $entityManager): RedirectResponse
     {
         $user = $this->getUser();
         $existingReview = $entityManager->getRepository(BookReviews::class)->findOneBy([
@@ -309,7 +325,7 @@ class SearchController extends AbstractController
     {
         $user = $this->getUser();
 
-        if (is_null($user)) {
+        if (null === $user) {
             return $this->redirectToRoute('app_login');
         }
 
@@ -383,9 +399,9 @@ class SearchController extends AbstractController
         $currentlyReading = $userReadingList->getCurrentlyReading();
         $haveRead = $userReadingList->getHaveRead();
 
-        $is_in_want_to_read = in_array($bookId, $wantToRead);
-        $is_in_currently_reading = in_array($bookId, $currentlyReading);
-        $is_in_have_read = in_array($bookId, $haveRead);
+        $is_in_want_to_read = \in_array($bookId, $wantToRead, true);
+        $is_in_currently_reading = \in_array($bookId, $currentlyReading, true);
+        $is_in_have_read = \in_array($bookId, $haveRead, true);
 
         // Perform actions based on the selected value and book ID
         switch ($selection) {

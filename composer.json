@@ -40,7 +40,8 @@
         "symfonycasts/verify-email-bundle": "*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-        "php-http/curl-client": "*"
+        "php-http/curl-client": "*",
+        "friendsofphp/php-cs-fixer": "*"
     },
     "require-dev": {
         "dbrekelmans/bdi": "^1.0",

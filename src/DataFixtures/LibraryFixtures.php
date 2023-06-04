@@ -1,5 +1,19 @@
 <?php
 
+/*
+ *             ████████   ████████                           █████      ████████  ████
+ *            ███░░░░███ ███░░░░███                         ░░███      ███░░░░███░░███
+ *   ██████  ░░░    ░███░░░    ░███ █████ ███ █████  ██████  ░███████ ░░░    ░███ ░███
+ *  ░░░░░███    ███████    ███████ ░░███ ░███░░███  ███░░███ ░███░░███   ██████░  ░███
+ *   ███████   ███░░░░    ███░░░░   ░███ ░███ ░███ ░███████  ░███ ░███  ░░░░░░███ ░███
+ *  ███░░███  ███      █ ███      █ ░░███████████  ░███░░░   ░███ ░███ ███   ░███ ░███
+ * ░░████████░██████████░██████████  ░░████░████   ░░██████  ████████ ░░████████  █████
+ *  ░░░░░░░░ ░░░░░░░░░░ ░░░░░░░░░░    ░░░░ ░░░░     ░░░░░░  ░░░░░░░░   ░░░░░░░░  ░░░░░
+ *
+ *  This file is part of the a22web31 - web technology project.
+ *
+ */
+
 namespace App\DataFixtures;
 
 use App\Entity\Library;
@@ -66,7 +80,7 @@ class LibraryFixtures extends Fixture implements DependentFixtureInterface
             ],
         ];
 
-        for ($i = 1; $i <= count($libraries); ++$i) {
+        for ($i = 1; $i <= \count($libraries); ++$i) {
             $library = $this->createLibrary($libraries[$i - 1]);
             $manager->persist($library);
 

@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ead56d2-0030-4aa0-9ed2-79521470b502" name="Changes" comment="Fix meetup display layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php-cs-fixer.dist.php" beforeDir="false" afterPath="$PROJECT_DIR$/.php-cs-fixer.dist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/book_binder/book_page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book_binder/book_page.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCredentialsCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCredentialsCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BookReviewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookReviewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MeetupRequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MeetupRequestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReadingListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReadingListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/BookFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/BookFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/BookReviewFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/BookReviewFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/LibraryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/LibraryFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/MeetupRequestsFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/MeetupRequestsFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ResetAutoincrementFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ResetAutoincrementFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserReadingListFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserReadingListFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Doctrine/Type/GenreEnumType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doctrine/Type/GenreEnumType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Doctrine/Type/LanguageEnumType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doctrine/Type/LanguageEnumType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BookReviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BookReviews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Library.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Library.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MeetupList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MeetupList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MeetupRequestList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MeetupRequestList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MeetupRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MeetupRequests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserPersonalInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserPersonalInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserReadingInterest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserReadingInterest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserReadingList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserReadingList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enum/GenreEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enum/GenreEnum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enum/LanguageEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enum/LanguageEnum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BookReviewFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BookReviewFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MeetupRequestFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MeetupRequestFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ReadingInterestFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReadingInterestFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SettingsFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SettingsFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoogleBooksApi/GoogleBooksApiClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoogleBooksApi/GoogleBooksApiClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Message/AddBookToDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message/AddBookToDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MessageHandler/AddBookToDatabaseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MessageHandler/AddBookToDatabaseHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BookReviewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BookReviewsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LibraryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LibraryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MeetupListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MeetupListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MeetupRequestListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MeetupRequestListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MeetupRequestsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MeetupRequestsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserPersonalInfoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserPersonalInfoRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserReadingInterestRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserReadingInterestRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserReadingListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserReadingListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/EmailVerifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/EmailVerifier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +111,157 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/composer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/panther" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/php-webdriver/webdriver" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/dbrekelmans/bdi" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/snapappointments/bootstrap-select" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/book_binder/vendor/psr/clock" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
@@ -202,152 +409,15 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/composer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/framework-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/flex" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/filesystem" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dotenv" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/yaml" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/twig-bridge" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/config" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dependency-injection" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/var-exporter" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/cache" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-php83" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/runtime" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/cache-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/collections" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/common" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/orm" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/persistence" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/sql-formatter" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/validator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/property-access" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-icu" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/doctrine-bridge" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/options-resolver" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/twig-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-csrf" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-uuid" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-core" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/security-http" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/uid" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/property-info" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/password-hasher" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/intl" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/form" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/asset" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/easycorp/easyadmin-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/twig/extra-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/stopwatch" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfonycasts/verify-email-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/mailer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-migrations-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/migrations" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/annotations" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/masterminds/html5" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/panther" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/http-client" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/php-webdriver/webdriver" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/dbrekelmans/bdi" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/data-fixtures" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/doctrine/doctrine-fixtures-bundle" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/webpack-encore-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/fakerphp/faker" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/snapappointments/bootstrap-select" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpstan/phpdoc-parser" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/symfony/serializer" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/phpseclib/phpseclib" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/google/auth" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/google/apiclient-services" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/google/apiclient" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/firebase/php-jwt" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/book_binder/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/php-http/multipart-stream-builder" />
+      <path value="$PROJECT_DIR$/vendor/openai-php/client" />
+      <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/php-http/curl-client" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
     </include_path>
   </component>
   <component name="ProjectId" id="2P9XywPVGJARUc5DIbmWUwTwt5x" />
@@ -358,28 +428,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dell/Desktop/3-2/Software Engineering and Web Technology/a22web31&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2976356&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/dell/Desktop/3-2/Software Engineering and Web Technology/a22web31",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\mmeda\\OneDrive\\Bureaublad\\WebTech\\Project\\node_modules\\prettier",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2976356",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\louis\IdeaProjects\a22web31\book_binder\public\images" />
@@ -393,10 +465,6 @@
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.localserver">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -409,10 +477,26 @@
     <configuration name="localserver" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public">
       <method v="2" />
     </configuration>
+    <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="npm.prettier" />
       <item itemvalue="PHP Built-in Web Server.localserver" />
       <item itemvalue="PHPUnit.test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prettier" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

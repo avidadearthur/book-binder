@@ -1,5 +1,19 @@
 <?php
 
+/*
+ *             ████████   ████████                           █████      ████████  ████
+ *            ███░░░░███ ███░░░░███                         ░░███      ███░░░░███░░███
+ *   ██████  ░░░    ░███░░░    ░███ █████ ███ █████  ██████  ░███████ ░░░    ░███ ░███
+ *  ░░░░░███    ███████    ███████ ░░███ ░███░░███  ███░░███ ░███░░███   ██████░  ░███
+ *   ███████   ███░░░░    ███░░░░   ░███ ░███ ░███ ░███████  ░███ ░███  ░░░░░░███ ░███
+ *  ███░░███  ███      █ ███      █ ░░███████████  ░███░░░   ░███ ░███ ███   ░███ ░███
+ * ░░████████░██████████░██████████  ░░████░████   ░░██████  ████████ ░░████████  █████
+ *  ░░░░░░░░ ░░░░░░░░░░ ░░░░░░░░░░    ░░░░ ░░░░     ░░░░░░  ░░░░░░░░   ░░░░░░░░  ░░░░░
+ *
+ *  This file is part of the a22web31 - web technology project.
+ *
+ */
+
 namespace App\DataFixtures;
 
 use App\Entity\MeetupList;
@@ -27,7 +41,7 @@ class MeetupRequestsFixtures extends Fixture implements DependentFixtureInterfac
 
             // Create users array with size maxNumber
             $users[0] = $this->getReference(UserFixtures::USER_REFERENCE.$i);
-            for ($k = 1; count($users_shuffled) <= $maxNumber - 1; ++$k) {
+            for ($k = 1; \count($users_shuffled) <= $maxNumber - 1; ++$k) {
                 // Skip the host user
                 if ($k == $i) {
                     continue;
