@@ -72,35 +72,33 @@ deploy-job:
     - master
   # Before we start any job, prepare the container with some extra configuration 
   # e.g. setting the ssh credentials, so we can later copy to shell.studev.groept.be
-before_script:
-  # create a local .ssh folder in the container
-  - mkdir -p ~/.ssh
-  # start the ssh-agent and add the private key to the system  
-  - eval $(ssh-agent -s)  
-  - ssh-add - <<< "$SSH_PRIVATE_KEY"
-  # add the fingerprint for shell.studev.groept.be as a trusted host
-  - ssh-keyscan shell.studev.groept.be > ~/.ssh/known_hosts
-  # install rsync to copy files to the web server
-  # this container runs Alpine Linux, where apk is the package manager (not apt-get)
-  - apk add rsync
-  # install Node.js and Yarn
-  - apk add --no-cache nodejs yarn
-
-script:
-  - composer install
-  # Build assets with Encore
-  - yarn install
-  - yarn encore production
-  - composer dump-env prod
-  # rsync is a copy/sync tool we use to copy the current folder ./ to studev    
-  # we ignore the .git folder and the .env file    
-  # we delete the files on the remote server that are not present in the local copy
-  - rsync -rv --exclude=".git/"
-              --exclude=".env" 
-              --exclude=".idea/" 
-              --exclude=".vscode/"
-              --exclude="config/packages/framework.yaml"
-              --delete 
-              ./ a22web31@shell.studev.groept.be:/var/www/html
-  # clear the cache on the remote server and move the build folder out of the public folder
-  - ssh -t a22web31@shell.studev.groept.be "cd /var/www/html; cp public/build/ . -r; php bin/console cache:clear;"
+  before_script:
+    # create a local .ssh folder in the container
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - ssh-add - <<< "$SSH_PRIVATE_KEY"
+    # add the fingerprint for shell.studev.groept.be as a trusted host
+    - ssh-keyscan shell.studev.groept.be > ~/.ssh/known_hosts
+    # install rsync to copy files to the web server
+    # this container runs Alpine Linux, where apk is the package manager (not apt-get)
+    - apk add rsync
+    # install Node.js and Yarn
+    - apk add --no-cache nodejs yarn
+  script:
+    - composer install
+    # Build assets with Encore
+    - yarn install
+    - yarn encore production
+    - composer dump-env prod
+    # rsync is a copy/sync tool we use to copy the current folder ./ to studev    
+    # we ignore the .git folder and the .env file    
+    # we delete the files on the remote server that are not present in the local copy
+    - rsync -rv --exclude=".git/"
+                --exclude=".env" 
+                --exclude=".idea/" 
+                --exclude=".vscode/"
+                --exclude="config/packages/framework.yaml"
+                --delete 
+                ./ a22web31@shell.studev.groept.be:/var/www/html
+    # clear the cache on the remote server and move the build folder out of the public folder
+    - ssh -t a22web31@shell.studev.groept.be "cd /var/www/html; cp public/build/ . -r; php bin/console cache:clear;"
