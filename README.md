@@ -17,7 +17,7 @@ This way you can navigate through the website with two different accounts and se
 
 ## Minimal Requirements & Implemented Features
 - [x] - MySQL database with 5 or more tables
-    (add pictures of the database schema here)    
+    ![Software Engineering ERD.png](./Software_Engineering_ERD.png)   
 - [x] - Fully mapped ORM
     + Created custom Enum types for the database to hold genres and languages
 - [x] - User login/authentication
