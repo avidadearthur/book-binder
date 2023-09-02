@@ -1,3 +1,4 @@
+_This project was made public for educational purposes, all exposed API Keys and server credentials have been deactivated._ 
 # BookBinder
 
 This is a web application designed and implemented using modern web technologies, including HTML5, CSS3, PHP (Symfony Framework), and JavaScript ES6. The goal of the project was to create a healthy and thought-through code base that includes a wide set of features. The team worked collaboratively and followed an agile process, using a GitLab Issue Board and Git log as process documentation.
